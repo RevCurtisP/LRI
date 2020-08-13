@@ -1,0 +1,5 @@
+Low Resolution Archive
+
+File Extension .LRA
+
+Signature - "LRA" 

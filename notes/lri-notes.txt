@@ -1,0 +1,100 @@
+Low Res Picture Format - Design Notes
+
+File Extension .LRI
+
+Uses a 16x16 array of 2x2 block graphics characters.
+
+Monochrome images could be black pixels on a single
+color background or single color pixels on a black 
+background. The latter would match color images. 
+
+Color images are colored pixels on a black background.
+Within each 2x2 graphics character, the pixels must
+all be the same color.
+
+On the ZX80 and ZX81 and when printed on paper, images
+will always be black pixels on a white background.
+
+File Contents
+
+  An LRI file, stream, or string will contain only the
+  encoded image data. To keep the decoding logic as
+  simple as possible, there is no header or signature.
+  
+  Since this makes the data unidentifiable, other than
+  by file extenson, LRI files will normally be archived
+  in LRA files, which contain both signatures and headers.
+  
+Monochrome Data Format
+
+  The 16 graphics characters are encoded as the characters
+  A-P, case-insensitive. 
+  
+  The Tandy Color Computer (and MC-10) character set contains
+  the block graphics characters in binary order, so it will be
+  the basis of the mapping, with A mapped to CHR$(128) and P
+  to CHR$(143). 
+
+  Any characters without a specified mapping are ignored.
+
+Data Compression
+  
+  A simple run-length encoding is used for compression. A 
+  single digit (0-9) will indicates the run-length of the next
+  block graphics character encoutered. For simplicity 0 will
+  be treated as 1, and only the last digit of a series will be 
+  used.
+  
+Multicolor Data Format
+  
+  On systems that allow it, each 2x2 character block can have
+  it's own pixel color, with the background always black,
+  with a total of 7 colors allowed (black being the eighth).
+  
+  The Sinclair Spectrum assigns the colors in binary order,
+  with bits 0, 1, and 2 being blue, red, and green respectively,
+  so it will be used as the basis for the mapping.
+  
+  The colors codes 1 through 7 will be mapped to the letters
+  Q through W, respectively. The appearance of a color code
+  will cause succeeding graphics characters to be displayed
+  in the corresponding color.
+  
+  On monochrome systems, the color codes are simply ignored.
+  Preferably, images should be designed in such a way that
+  they do not lose detail when all the pixels are the same
+  color.
+
+Reference Implementations
+  
+  The reference implementation will be on the Tandy Color
+  Computer.
+
+Computers with 2x2 block graphics in their chracter set
+  Model              Screen Size  Colors    Notes
+  Atari (all 8-bit)     40x25       2       
+  Commodore PET         40x25       2       Green on Black
+  Commodore VIC-20      22x23       8
+  Commodore C64, etc.   40x25       8+
+  Mattel Aquarius       40x24       8
+  Sinclair Spectrum     32x24       8
+  Sinclair ZX80,ZX81    32x24       2       Black on White
+  Tandy CoCo, MC-10     32x16       8       Color on Black
+
+File Extension Candidates
+  .LRI  Low Resolution Image
+        Unused
+  .LRA  Low Resolution Album/Animation
+        Unused
+  .LRP  Low Resolution Picture
+        Line Rider by inXile entertainment
+        IBM Works for OS/2 Report
+        Linux Router Project Package
+  ,LRM  Low Resolution Monochrome  
+        Line Rider by inXile entertainment
+        Encarta (Class Server Learning Resource)
+  .LRC  Low Resolution Colot
+        Lyric File (Audio Players)
+        Dance With Intensity (Lyric File)
+        StepMania (Lyric File) 
+        Intel Video (Phone Language Resource Control)

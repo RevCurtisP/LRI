@@ -1,0 +1,66 @@
+Aquarius LRI Image Viewer
+
+This BASIC program for the Mattel Aquarius takes a text encoded LRI
+image and saves it onto tape.
+
+LOADING THE PROGRAM
+
+Insert the LRI Writer cassette into the cassette deck, and rewind if 
+needed. At the Ok prompt type
+
+  cload "lriwrt"
+  
+and press the RTN key. The Aquarius will display
+
+  Press <PLAY>
+  Press RETURN key to start
+  
+Press the RTN key, then press the play button on the cassette deck. If
+using Virtual Aquarius, select menu option File - Play Cassette File...
+and open the LRIWRITE.CAQ file.
+
+The Aquarius will display
+
+  Found: lriwrt
+  Ok
+
+After the Ok prompt appears, press the stop button on the cassette deck.
+This is not necessary when using Virtual Aquarius.
+
+RUNNING THE PROGRAM
+
+At the Ok prompt type
+
+  run
+  
+and press the RTN key. The Aquarius will display a ? prompt. Enter the
+LRI encoded text one line at a time, pressing RTN after each line. When
+finished press RTN without entering any text on at the ? prompt. If 
+using Virtual Aquarius you can use the menu options File - Quick Type...
+or Util - Paste to enter the LRI file contents.
+
+The Aquarius will now display the prompt
+
+  Press <RECORD>>
+  Press RETURN key to start
+  
+Insert the cassette tape to be written to into the cassette deck and,
+if necessary, fast-forward or rewind it to the correct position. 
+Press the PLAY and RECORD buttons, then press the RTN key. When using
+Virtual Aquarius, the Save As file dialog will appear. Enter a name
+for the cassette image and click Save.
+
+After the Ok prompt appears, press the stop button on the cassette deck.
+This is not necessary when using Virtual Aquarius.
+ 
+TECHNICAL NOTES
+
+The Aquarius BASIC does not support reading or writing of text to tape.
+Instead, the CLOAD* and CSAVE* commands are used to read write the 
+contents of a numeric array. 
+
+The program lriwrite takes the entered data and POKEs it into the bytes
+of the array, then saves it to tape. The program lriview loads the array
+from tape, then PEEKs the LRI data from the bytes of the array for 
+decoding and display.
+

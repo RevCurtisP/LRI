@@ -1,0 +1,14 @@
+Bitmap DIB Header
+                  OS/2 1.x          Windows             OS/2
+Offset  Size  BITMAPCOREHEADER  BITMAPINFOHEADER  OS22XBITMAPHEADER 
+  0E		  4	  Header Size (12)  Header Size (40)  
+  12		  2	  Bitmap Width      Bitmap Width         
+  14		  2	  Bitmap Height     Bitmap Height        
+  16		  2	  Color Planes (1)  Color Planes (1)     
+  18		  2	  Bits per Pixel    Bits per Pixel       
+  22      4	                    Image Data Size   
+  26      4	                    Horz Resolution   
+  2A      4	                    Vert Resolution   
+  2E      4	                    Pallete Colors    
+  32      4	                    Important Colors   
+  

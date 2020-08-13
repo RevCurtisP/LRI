@@ -1,0 +1,68 @@
+Aquarius LRI Image Viewer
+
+This BASIC program for the Mattel Aquarius displays LRI images saved on
+cassette. An LRI (Low Resolution Image) is 32 x 32 pixel, 8 color image
+encoded as text and displayed using block graphics characters.
+
+LOADING THE PROGRAM
+
+Insert the LRI Viewer cassette into the cassette deck, and rewind if 
+needed. At the Ok prompt type
+
+  cload "lrivwr"
+  
+and press the RTN key. The Aquarius will display
+
+  Press <PLAY>
+  Press RETURN key to start
+  
+Press the RTN key, then press the play button on the cassette deck. If
+using Virtual Aquarius, select menu option File - Play Cassette File...
+and open the LRIVIEW.CAQ file.
+
+The Aquarius will display
+
+  Found: lrivwr
+  Ok
+
+After the Ok prompt appears, press the stop button on the cassette deck.
+This is not necessary when using Virtual Aquarius.
+
+RUNNING THE PROGRAM
+
+Insert the cassette containing the LRI image into the cassette deck. If
+necessary, fast forward or rewind the cassette to the position of the file.
+At the Ok prompt type
+
+  run
+  
+and press the RTN key. The Aquarius will display
+
+  Press <PLAY>
+  Press RETURN key to start
+  
+Press the RTN key, then press the play button on the cassette deck. If
+using Virtual Aquarius, select menu option File - Play Cassette File...
+and open the CAQ file file containing the LRI file.
+
+When the Aquarius screen turns black, press the stop key on the cassette 
+deck. This is not necessary when using Virtual Aquarius.
+
+The image will then be drawn on the screen. 
+
+EXITING THE PROGRAM
+
+After the image is displayed, press any key to end the program. The screen
+will be cleared and the Ok prompt displayed.
+
+If the program is interrupted using CTL-C, the Ok prompt and cursor will
+be invisible. Press the RST button to return the screen to normal.
+
+TECHNICAL NOTES
+
+The LRI image data is stored in a numeric array and loaded from tape with
+the CLOAD* statement. LRI images can be written to tape using the lriwrite
+program.
+
+
+
