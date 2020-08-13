@@ -6,6 +6,8 @@
 #Consists of 32 lines of 4 bytes each
 #Top line is bottom of image
 
+import argparse
+
 def raw2rli(rawdata, invert=False):
   if len(rawdata) != 128: raise Error("Incorrect Data Length")
   lridata = []
@@ -33,3 +35,10 @@ def main(imagename, invert=False):
     lridata = raw2rli(rawdata, invert)
     with open(lrifilename, "w") as lrifile:
       lrifile.writelines(lridata)
+
+if __name__ == "__main__":
+  parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+  parser.add_argument("-i", help="Invert Image", action='store_true')
+  parser.add_argument("imgname", help="Image Name (without extension")
+  args = parser.parse_args()
+    main()
