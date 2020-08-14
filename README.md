@@ -13,13 +13,18 @@ graphics characters on classic 8-bit computers.
 
 | LRI File     | Description                            |
 | ------------ | -------------------------------------- |
+| ATARI.LRI    | Atari "Fuji" logo                      |
 | ATOM.LRI     | An atom                                |
 | AVENGERS.LRI | Logo of a certain superhero team       |
+| CBM.LRI      | Commodore "chicken head" logo          |
 | DNA.LRI      | A strand of DNA                        |
+| IBM.LRI      | IBM "eight bar" logo
 | RABBIT.LRI   | A white rabbit                         |
+| RADSHACK.LRI | Classic Radio Shack logo               |
 | ROBOT.LRI    | A robot                                |
 | RUBIK.LRI    | The famous cube puzzle from the 1980's |
 | TARDIS.LRI   | A science fiction time machine         |
+| WINDOWS.LRI  | Windows "Aero" logo                    |
 
 | Directory    | Description                                              |
 | ------------ | -------------------------------------------------------- | 
