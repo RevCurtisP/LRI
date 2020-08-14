@@ -28,6 +28,7 @@ def raw2rli(rawdata, invert=False):
   return lridata
 
 def main(imagename, invert=False):
+  print("Converting", imagename)
   rawfilename = imagename+".raw"
   lrifilename = imagename+".LRI"
   with open(rawfilename, "rb") as rawfile:
@@ -41,4 +42,4 @@ if __name__ == "__main__":
   parser.add_argument("-i", help="Invert Image", action='store_true')
   parser.add_argument("imgname", help="Image Name (without extension")
   args = parser.parse_args()
-    main()
+  main(args.imgname, args.i)
